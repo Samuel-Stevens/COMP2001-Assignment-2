@@ -22,6 +22,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="procedures.py" />
+    <Compile Include="models.py" />
     <Compile Include="__init__.py" />
     <Compile Include="authentication.py" />
     <Compile Include="COMP2001TrailMicroservice.py" />

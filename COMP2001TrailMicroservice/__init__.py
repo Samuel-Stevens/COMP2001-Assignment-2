@@ -5,7 +5,7 @@ from flask_migrate import Migrate, migrate
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc://SStevens:BfcK306+@DIST-6-505.uopnet.plymouth.ac.uk/COMP2001_WKeogh?driver=ODBC+Driver+17+for+SQL+Server"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc://SStevens:XkxG540+@DIST-6-505.uopnet.plymouth.ac.uk/COMP2001_SStevens?driver=ODBC+Driver+17+for+SQL+Server"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -18,3 +18,10 @@ with app.app_context():
         print("Database Connected Successfully")
     except Exception as e:
         print("Error connecting to the database:", e)
+
+
+import models
+import procedures
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
