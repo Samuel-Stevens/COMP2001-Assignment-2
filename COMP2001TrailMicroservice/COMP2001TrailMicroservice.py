@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_restx import Api, Resource, fields
+from flask_cors import CORS
 from functools import wraps
 import requests
 import jwt
@@ -7,6 +8,8 @@ import datetime
 import procedures
 from __init__ import app
 from authentication import token_required, role_required, SECRET_KEY
+
+CORS(app)
 
 api = Api(
     app,
@@ -36,10 +39,10 @@ class Ping(Resource):
         """Returns a pong response to confirm the server is running"""
         return {"message": "pong"}, 200
 
-
+users_ns = api.namespace('users', description='User operations')
 
 user_model = api.model('User', {
-    'UserID': fields.String(required=True, description='The user ID'),
+    'UserID': fields.Integer(required=True, description='The user ID'),
     'Username': fields.String(required=True, description='The users name'),
     'Email': fields.String(required=True, description='The users email address'),
     'Password': fields.String(required=True, description='The users password'),
@@ -47,7 +50,11 @@ user_model = api.model('User', {
 })
 
 
-
+@users_ns.route('')
+class Users(Resource):
+    @users_ns.doc('get_all_users')
+    def get(self):
+        return procedures.fetch_all_users()
 
 
 
