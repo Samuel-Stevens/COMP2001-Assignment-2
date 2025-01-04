@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repos\\COMP2001TrailMicroservice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice\\COMP2001TrailMicroservice.pyproj|D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice\\COMP2001TrailMicroservice.pyproj|solutionrelative:COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice\\COMP2001TrailMicroservice.pyproj|D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice\\COMP2001TrailMicroservice.pyproj|solutionrelative:COMP2001TrailMicroservice\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice\\COMP2001TrailMicroservice.pyproj|D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\authentication.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice\\COMP2001TrailMicroservice.pyproj|solutionrelative:COMP2001TrailMicroservice\\authentication.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "__init__.py (COMP2001TrailMicroservice)",
+              "DocumentMoniker": "D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\__init__.py",
+              "RelativeDocumentMoniker": "COMP2001TrailMicroservice\\__init__.py",
+              "ToolTip": "D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\__init__.py*",
+              "RelativeToolTip": "COMP2001TrailMicroservice\\__init__.py*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-01-04T18:47:44.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "authentication.py",
+              "DocumentMoniker": "D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\authentication.py",
+              "RelativeDocumentMoniker": "COMP2001TrailMicroservice\\authentication.py",
+              "ToolTip": "D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\authentication.py",
+              "RelativeToolTip": "COMP2001TrailMicroservice\\authentication.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-01-04T17:16:24.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "COMP2001TrailMicroservice.py",
+              "DocumentMoniker": "D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py",
+              "RelativeDocumentMoniker": "COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py",
+              "ToolTip": "D:\\Repos\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py*",
+              "RelativeToolTip": "COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-01-04T17:14:21.088Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
