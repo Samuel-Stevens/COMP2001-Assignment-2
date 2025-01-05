@@ -39,14 +39,16 @@ class Ping(Resource):
         """Returns a pong response to confirm the server is running"""
         return {"message": "pong"}, 200
 
-users_ns = api.namespace('users', description='User operations')
+users_ns = api.namespace('Users', description='User operations')
+trails_ns = api.namespace('Trails', description='Trail operations')
+feature_ns = api.namespace('Features', desciption='Feature operations')
 
 user_model = api.model('User', {
     'UserID': fields.Integer(required=True, description='The user ID'),
     'Username': fields.String(required=True, description='The users name'),
     'Email': fields.String(required=True, description='The users email address'),
     'Password': fields.String(required=True, description='The users password'),
-    'UserRole': fields.String(required=True, description='The role of the user'),
+    'Role': fields.String(required=True, description='The role of the user'),
 })
 
 
