@@ -4,6 +4,7 @@ from __init__ import app
 from sqlalchemy import text
 from authentication import token_required, role_required
 
+#Start of User CRUD operations
 @app.route('/users/<user_id>', methods=['GET'])
 def fetch_user_by_id(user_id):
     try:
@@ -22,7 +23,7 @@ def fetch_user_by_id(user_id):
 @app.route('/users', methods=['GET'])
 def fetch_all_users():
     try:
-        query = text("EXEC [CW2].[ReadUser]")
+        query = text("SELECT * FROM CW2.USERS")
         result = db.session.execute(query)
         users = [dict(row._mapping) for row in result.fetchall()]
         
@@ -78,6 +79,125 @@ def delete_user(user_id):
         return jsonify({"message": "User deleted successfully!"}), 200
     except Exception as e:
         return jsonify({"message": "Cant delete user", "error": str(e)}), 500
+
+#Start of Trail CRUD operations
+@app.route('/trails/<trail_id>', methods=['GET'])
+def fetch_trail_by_id(trail_id):
+    try:
+        query = text("EXEC [CW2].[ReadTrail] @TrailID = :TrailID")
+        result = db.session.execute(query, {'TrailID': trail_id})
+        trails = [dict(row._mapping) for row in result.fetchall()]
+        
+        if not trails:
+            return jsonify({"message": "Trail not found"}), 404
+        
+        return jsonify(trails), 200
+    except Exception as e:
+        return jsonify({"message": "Cant fetch trail", "error": str(e)}), 500
+
+@app.route('/trails', methods=['POST'])
+@token_required
+def create_trail():
+    try:
+        data = request.get_json()
+
+        # Define required fields
+        trail_fields = [
+            'TrailID', 'TrailName', 'TrailSummary', 'TrailDescription',
+            'Difficulty', 'Location', 'Distance', 'ElevationGain', 'RouteType',
+            'OwnedBy', 'Rating', 'EstimatedTime'
+        ]
+        coordinate_fields = [
+            f'Pt{i}_{suffix}' for i in range(1, 6) for suffix in ['Desc', 'Lat', 'Long']
+        ]
+        required_fields = trail_fields + coordinate_fields
+
+        # Validate required fields
+        missing_fields = [field for field in required_fields if field not in data]
+        if missing_fields:
+            return jsonify({
+                "message": "Missing required fields",
+                "missing_fields": missing_fields
+            }), 400
+
+        # Add additional fields if necessary
+        data['UserID'] = data['OwnedBy']
+
+        # Construct SQL query
+        query = text(f"""
+            EXEC [CW2].[CreateTrail] 
+            {", ".join([f"@{field} = :{field}" for field in required_fields])}
+        """)
+
+        # Execute query
+        db.session.execute(query, data)
+        db.session.commit()
+
+        return jsonify({"message": "Trail created successfully!"}), 201
+
+    except Exception as e:
+        return jsonify({"message": "Cannot create trail", "error": str(e)}), 500
+
+
+
+@app.route('/trails/<trail_id>', methods=['PUT'])
+@token_required
+def update_trail(trail_id):
+    try:
+        data = request.get_json()
+
+        # Define required fields
+        trail_fields = [
+            'TrailName', 'TrailSummary', 'TrailDescription',
+            'Difficulty', 'Location', 'Distance', 'ElevationGain', 'RouteType',
+            'OwnedBy', 'Rating', 'EstimatedTime'
+        ]
+        coordinate_fields = [
+            f'Pt{i}_{suffix}' for i in range(1, 6) for suffix in ['Desc', 'Lat', 'Long']
+        ]
+        required_fields = trail_fields + coordinate_fields
+
+        # Validate required fields
+        missing_fields = [field for field in required_fields if field not in data]
+        if missing_fields:
+            return jsonify({
+                "message": "Missing required fields",
+                "missing_fields": missing_fields
+            }), 400
+
+        # Add additional fields if necessary
+        data['TrailID'] = trail_id
+        data['UserID'] = data['OwnedBy']
+
+        # Construct SQL query dynamically
+        query = text(f"""
+            EXEC [CW2].[UpdateTrail]
+            {", ".join([f"@{field} = :{field}" for field in ['TrailID'] + required_fields])}
+        """)
+
+        # Execute query
+        db.session.execute(query, data)
+        db.session.commit()
+
+        return jsonify({"message": "Trail updated successfully!"}), 200
+
+    except Exception as e:
+        return jsonify({"message": "Cannot update trail", "error": str(e)}), 500
+
+
+
+@app.route('/trails/<trail_id>', methods=['DELETE'])
+@token_required
+def delete_trail(trail_id):
+    try:
+        query = text("EXEC [CW2].[DeleteTrail] @TrailID = :TrailID")
+        db.session.execute(query, {'TrailID': trail_id})
+        db.session.commit()
+        return jsonify({"message": "Trail deleted successfully!"}), 200
+    except Exception as e:
+        return jsonify({"message": "Cant delete trail", "error": str(e)}), 500
+
+
 
 
     
