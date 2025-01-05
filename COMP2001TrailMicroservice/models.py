@@ -24,7 +24,7 @@ class Trails(db.Model):
     Length = db.Column(db.Float)
     ElevationGain = db.Column(db.Float)
     RouteType = db.Column(db.String(100))
-    OwnedBy = db.Column(db.Integer, db.ForeignKey('USERS.UserID'))
+    OwnerID = db.Column(db.Integer, db.ForeignKey('USERS.UserID'))
     Rating = db.Column(db.Float)
     Pt1_Lat = db.Column(db.Float)
     Pt1_Long = db.Column(db.Float)
