@@ -43,6 +43,7 @@ class Ping(Resource):
 users_ns = api.namespace('Users', description='User operations')
 trails_ns = api.namespace('Trails', description='Trail operations')
 feature_ns = api.namespace('Feature', description='Feature operations')
+trail_feature_ns = api.namespace('Trail Feature', description='Trail Feature operations')
 authentication_ns = api.namespace('Authentication', description='Authentication operations')
 
 user_model = api.model('User', {
@@ -82,6 +83,12 @@ trail_model = api.model('Trail', {
 feature_model = api.model('Feature', {
     'TrailFeature': fields.String(required=True, description='The name of the feature'),
 })
+
+trail_feature_model = api.model('Trail Feature', {
+    'TrailFeatureID': fields.Integer(required=True, description='The id of the Feature'),
+    'TrailID': fields.Integer(required=True, description='The id of the Trail')
+})
+                               
 
 login_model = api.model('Login', {
     'email': fields.String(required=True, description='The email of the user'),
@@ -262,6 +269,22 @@ class Feature(Resource):
     def delete(self, feature_id):
         """Delete a feature using its ID """
         return procedures.delete_feature(feature_id)
+
+@trail_feature_ns.route('/')
+class TrailFeature(Resource):
+
+    @trail_feature_ns.doc('get_all_trail_features')
+    def get(self):
+        """Fetch all trail features"""
+        return procedures.fetch_all_trail_features()
+
+    @trail_feature_ns.expect(trail_feature_model)
+    @trail_feature_ns.doc('create_trail_feature', security='BearerAuth')
+    @token_required
+    @role_required('Admin')
+    def post(self):
+        """Create a new trail feature"""
+        return procedures.create_trail_feature()
 
 
 if __name__ == "__main__":

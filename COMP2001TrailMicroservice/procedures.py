@@ -308,6 +308,44 @@ def fetch_all_features():
         return ({"message": "Cant fetch feature", "error": str(e)}), 500
 
 
+
+#Start of Trail Features Partial Crud
+@app.route('/trail_features/create', methods=['POST'])
+@token_required
+def create_trail_feature():
+    """Create a new Trail_Feature entry"""
+    try:
+        data = request.get_json()
+        if not ('TrailID' in data and 'TrailFeatureID' in data):
+            return ({"message": "TrailID and TrailFeatureID fields are required"}), 400
+
+        query = text("""
+            EXEC [CW2].[CreateTrailFeature] 
+            @TrailID = :TrailID, 
+            @TrailFeatureID = :TrailFeatureID
+        """)
+        db.session.execute(query, data)
+        db.session.commit()
+        return ({"message": "Trail Feature created successfully!"}), 201
+    except Exception as e:
+        return ({"message": "Can't create Trail Feature", "error": str(e)}), 500
+
+
+@app.route('/trail_features', methods=['GET'])
+def fetch_all_trail_features():
+    """Fetch all Trail_Feature entries"""
+    try:
+        query = text("SELECT * FROM CW2.TrailFeaturex")
+        result = db.session.execute(query)
+        trail_features = [dict(row._mapping) for row in result.fetchall()]
+
+        if not trail_features:
+            return ({"message": "No Trail Features found"}), 404
+
+        return (trail_features), 200
+    except Exception as e:
+        return ({"message": "Can't fetch Trail Features", "error": str(e)}), 500
+
 print("Routes registered in views.py:")
 for rule in app.url_map.iter_rules():
     print(rule)
