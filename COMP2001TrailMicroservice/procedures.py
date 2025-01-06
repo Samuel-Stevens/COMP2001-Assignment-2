@@ -38,7 +38,6 @@ def fetch_all_users():
 @app.route('/Users/create', methods=['POST'])
 def create_user():
     try:
-        a
         data = request.get_json()
         required_fields = ['Username', 'Email', 'Password', 'Role']
         missing_fields = [field for field in required_fields if field not in data]
