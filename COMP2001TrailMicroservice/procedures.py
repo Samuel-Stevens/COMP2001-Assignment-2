@@ -335,7 +335,7 @@ def create_trail_feature():
 def fetch_all_trail_features():
     """Fetch all Trail_Feature entries"""
     try:
-        query = text("SELECT * FROM CW2.TrailFeaturex")
+        query = text("SELECT * FROM CW2.TrailFeature")
         result = db.session.execute(query)
         trail_features = [dict(row._mapping) for row in result.fetchall()]
 
