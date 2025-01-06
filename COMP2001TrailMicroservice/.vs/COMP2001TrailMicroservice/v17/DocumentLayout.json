@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:COMP2001TrailMicroservice.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:requirements.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\server.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:server.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\authentication.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:authentication.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\procedures.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:procedures.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:models.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:__init__.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\authentication.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:authentication.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\models.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{17A3A8DE-5BFF-4041-96E8-F07083D9D58A}|COMP2001TrailMicroservice.pyproj|solutionrelative:models.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,24 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "requirements.txt",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\requirements.txt",
+              "RelativeDocumentMoniker": "requirements.txt",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\requirements.txt",
+              "RelativeToolTip": "requirements.txt",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-01-06T01:27:36.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "procedures.py",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\procedures.py",
               "RelativeDocumentMoniker": "procedures.py",
               "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\procedures.py",
               "RelativeToolTip": "procedures.py",
-              "ViewState": "AgIAAOcAAAAAAAAAAAApwO0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAApwGYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-01-04T22:40:34.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "models.py",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\models.py",
               "RelativeDocumentMoniker": "models.py",
@@ -60,33 +77,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "COMP2001TrailMicroservice.py",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py",
-              "RelativeDocumentMoniker": "COMP2001TrailMicroservice.py",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\COMP2001TrailMicroservice.py",
-              "RelativeToolTip": "COMP2001TrailMicroservice.py",
-              "ViewState": "AgIAAO8AAAAAAAAAAAAgwPIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "server.py",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\server.py",
+              "RelativeDocumentMoniker": "server.py",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\server.py",
+              "RelativeToolTip": "server.py",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-01-04T22:40:32.038Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "authentication.py",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\authentication.py",
               "RelativeDocumentMoniker": "authentication.py",
               "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\authentication.py",
               "RelativeToolTip": "authentication.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-01-04T22:40:30.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "__init__.py (COMP2001TrailMicroservice)",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\COMP2001-Assignment-2\\COMP2001TrailMicroservice\\__init__.py",
               "RelativeDocumentMoniker": "__init__.py",

@@ -13,7 +13,7 @@ def token_required(f):
             return {'message': 'Token is missing'}, 401
         try:
             token = token.replace('Bearer ', '')
-            data = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+            data = jwt.decode(token, SECRET_KEY, algorithms=["HS256"], options={"verify_exp": True})
             request.user_data = data
         except jwt.ExpiredSignatureError:
             return {'message': 'Token has expired'}, 401
@@ -32,6 +32,4 @@ def role_required(role):
             return f(*args, **kwargs)
         return decorated
     return wrapper
-
-
 

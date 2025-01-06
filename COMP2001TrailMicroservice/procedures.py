@@ -100,7 +100,7 @@ def fetch_all_trails():
         if not trails:
             return ({"message": "Trail not found"}), 404
         
-        return jsonify(trails), 200
+        return (trails), 200
     except Exception as e:
         return ({"message": "Cant fetch trail", "error": str(e)}), 500
 
