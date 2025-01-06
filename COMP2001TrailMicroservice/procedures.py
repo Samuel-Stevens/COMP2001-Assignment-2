@@ -38,7 +38,7 @@ def fetch_all_users():
 @app.route('/Users/create', methods=['POST'])
 def create_user():
     try:
-        # Parse and validate request data
+        a
         data = request.get_json()
         required_fields = ['Username', 'Email', 'Password', 'Role']
         missing_fields = [field for field in required_fields if field not in data]
@@ -46,7 +46,7 @@ def create_user():
         if missing_fields:
             return ({"message": f"Missing fields: {', '.join(missing_fields)}"}), 400
 
-        # Execute the stored procedure
+       
         query = text("""
             EXEC [CW2].[CreateUser] 
             @Username = :Username, @Email = :Email, @Password = :Password, @Role = :Role
@@ -57,7 +57,7 @@ def create_user():
         return ({"message": "New User created successfully!"}), 201
 
     except Exception as e:
-        # Return detailed error response
+        
         return ({"message": "Cannot create user", "error": str(e)}), 500
 
 
@@ -143,7 +143,7 @@ def create_trail():
                 "missing_fields": missing_fields
             }), 400
 
-        #Forign key
+        
         data['UserID'] = data['OwnerID']
 
         # Construct SQL query
@@ -167,7 +167,7 @@ def create_trail():
 @token_required
 def update_trail(TrailID):
     try:
-        # Parse the JSON payload
+        
         data = request.get_json()
 
         # Define required fields
@@ -188,11 +188,11 @@ def update_trail(TrailID):
                 "missing_fields": missing_fields
             }), 400
 
-        # Add `TrailID` to data for SQL binding
+        
         data['TrailID'] = TrailID
-        data['UserID'] = data['OwnerID']  # Add UserID if needed by the SQL procedure
+        data['UserID'] = data['OwnerID']  
 
-        # Define the SQL query explicitly
+        
         query = text("""
             EXEC [CW2].[UpdateTrail]
             @TrailID = :TrailID, @TrailName = :TrailName, @TrailSummary = :TrailSummary,
@@ -206,14 +206,13 @@ def update_trail(TrailID):
             @Pt5_Desc = :Pt5_Desc, @Pt5_Lat = :Pt5_Lat, @Pt5_Long = :Pt5_Long
         """)
 
-        # Execute the query
         db.session.execute(query, data)
         db.session.commit()
 
         return ({"message": "Trail updated successfully!"}), 200
 
     except Exception as e:
-        # Capture and return detailed error messages
+       
         return ({"message": "Cannot update trail", "error": str(e)}), 500
 
 

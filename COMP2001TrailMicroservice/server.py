@@ -245,6 +245,7 @@ class Feature(Resource):
 class Feature(Resource):
     @feature_ns.doc('get_feature_by_id')
     def get(self, feature_id):
+        """Get specific feature using its ID"""
         return procedures.fetch_feature_by_id(feature_id)
 
     @feature_ns.expect(feature_model)
@@ -252,12 +253,14 @@ class Feature(Resource):
     @token_required
     @role_required('Admin')
     def put(self, feature_id):
+        """Update a feature using its ID """
         return procedures.update_Feature(feature_id)
 
     @feature_ns.doc('delete_feature', security='BearerAuth')
     @token_required
     @role_required('Admin')
     def delete(self, feature_id):
+        """Delete a feature using its ID """
         return procedures.delete_feature(feature_id)
 
 

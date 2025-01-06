@@ -14,15 +14,6 @@ def token_required(f):
         return f(*args, **kwargs)
     return decorated
 
-def role_required(role):
-    def wrapper(f):
-        @wraps(f)
-        def decorated(*args, **kwargs):
-            if request.user_data.get('role') != role:
-                return {'message': 'Unauthorized, insufficient role'}, 403
-            return f(*args, **kwargs)
-        return decorated
-    return wrapper
 
 def role_required(role):
     def wrapper(f):
