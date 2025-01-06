@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_restx import Api, Resource, fields
 from flask_cors import CORS
 from functools import wraps
+from flask_session import Session
 import requests
 import jwt
 import datetime
@@ -87,74 +88,63 @@ login_model = api.model('Login', {
     'password': fields.String(required=True, description='The password of the user'),
 })
 
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SECRET_KEY'] = 'COMP2001Trails'  # Change this to a secret key
+Session(app)
+
 AUTH_API_URL = "https://web.socem.plymouth.ac.uk/COMP2001/auth/api/users"
+
 
 @authentication_ns.route('/login')
 class Login(Resource):
     @authentication_ns.doc('user_login')
     @authentication_ns.expect(login_model)
     def post(self):
-        """Authenticate user with the Auth API and issue a token for API endpoints"""
+        """Authenticate user with the Auth API and create a session for API access"""
         data = request.get_json()
-
-        # Validate input
         email = data.get('email')
         password = data.get('password')
+
         if not email or not password:
-            return {"message": "Email and password are required"}, 400
+            return {'message': 'Email and password are required'}, 400
 
         try:
-            # Send authentication request to the Auth API
             response = requests.post(
                 AUTH_API_URL,
                 json={"email": email, "password": password},
-                headers={"Content-Type": "application/json"},
+                headers={"Content-Type": "application/json"}
             )
 
-            # Handle API response
-            if response.status_code != 200:
+            if response.status_code == 200:
+                try:
+                    auth_response = response.json()
+                    if isinstance(auth_response, list) and len(auth_response) >= 2 and auth_response[0] == "Verified":
+                        verified_status = auth_response[1]
+
+                        # Store the user data in session
+                        session['email'] = email
+                        session['role'] = 'Admin' if verified_status == "True" else 'User'
+
+                        return {
+                            "message": "Login successful",
+                            "verified": verified_status == "True",
+                            "role": session['role']
+                        }, 200
+
+                    else:
+                        return {"message": "Unexpected API response format", "response_content": auth_response}, 500
+
+                except ValueError:
+                    return {"message": "Invalid JSON response from Auth API"}, 500
+
+            else:
                 return {
                     "message": f"Authentication failed with status code {response.status_code}",
-                    "response_text": response.text,
+                    "response_text": response.text
                 }, response.status_code
-
-            # Parse and validate the API response
-            try:
-                auth_response = response.json()
-                if (
-                    isinstance(auth_response, list)
-                    and len(auth_response) >= 2
-                    and auth_response[0] == "Verified"
-                ):
-                    verified_status = auth_response[1] == "True"
-                    token = jwt.encode(
-                        {
-                            "email": email,
-                            "role": "Admin" if verified_status else "User",
-                            "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=1),
-                        },
-                        SECRET_KEY,
-                        algorithm="HS256",
-                    )
-
-                    return {
-                        "message": "Login successful",
-                        "verified": verified_status,
-                        "token": token,
-                    }, 200
-
-                return {
-                    "message": "Unexpected API response format",
-                    "response_content": auth_response,
-                }, 500
-
-            except ValueError:
-                return {"message": "Invalid JSON response from Auth API"}, 500
 
         except requests.RequestException as e:
             return {"message": f"Error connecting to Auth API: {str(e)}"}, 500
-
-
 
 
 @users_ns.route('')
