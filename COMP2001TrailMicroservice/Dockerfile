@@ -17,6 +17,7 @@ RUN pip install --upgrade pip
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
+
 RUN apt-get -y clean
 
 EXPOSE 8000

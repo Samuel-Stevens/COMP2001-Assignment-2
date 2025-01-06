@@ -5,7 +5,7 @@ from functools import wraps
 from flask_session import Session
 import requests
 import jwt
-import datetime
+from datetime import timedelta
 import procedures
 from __init__ import app
 from authentication import token_required, role_required, SECRET_KEY
@@ -88,8 +88,9 @@ login_model = api.model('Login', {
     'password': fields.String(required=True, description='The password of the user'),
 })
 
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SECRET_KEY'] = 'COMP2001Trails'  # Change this to a secret key
+app.config['SECRET_KEY'] = SECRET_KEY  
 Session(app)
 
 AUTH_API_URL = "https://web.socem.plymouth.ac.uk/COMP2001/auth/api/users"

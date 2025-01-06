@@ -3,7 +3,7 @@ from flask import request, jsonify, session
 import jwt
 import datetime
 
-SECRET_KEY = "COMP2001"
+SECRET_KEY = "COMP2001Trails"
 
 def token_required(f):
     @wraps(f)
